@@ -1,20 +1,33 @@
-// Letter.js: Contains a constructor, Letter. This constructor should be able to either display an underlying character or a blank placeholder (such as an underscore), depending on whether or not the user has guessed the letter. That means the constructor should define:
-// A string value to store the underlying character for the letter
-// A boolean value that stores whether that letter has been guessed yet
-// A function that returns the underlying character if the letter has been guessed, or a placeholder (like an underscore) if the letter has not been guessed
-// A function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
-
 // export the file
-export { Letter as default };
 
-// LETTER CONSTRUCTOR
+exports.Poop = function(letter) {
+    this.letter = letter;
+    this.toString = function() {
+        return "My value is " + letter;
+    }
+}
+//==
+var poo = require("./poo.js");
+var longThing = new poo.Poop("a");
+console.log(longThing.toString());
+
+// ---
+
+module.exports = {
+    essentials: essentials,
+    niceToHaves: niceToHaves
+  };
+  var stuffINeed = require("./ess.js");
+  console.log(stuffINeed);
+// ---
+
+
+// LETTER CONSTRUCTOR ======================
 
 var Letter = function(letter) { 
     this.letter = letter,
     this.match = false
 }
-
-// ADD PROTOTYPES
 
 // returns either the underlying letter or an underscore
 Letter.prototype.toString = function() {
@@ -30,8 +43,7 @@ Letter.prototype.toString = function() {
 
 // compares input with underlying letter
 Letter.prototype.compare = function(char) {
-    if (this.letter === char) {
+    if (this.letter === char.toUpperCase()) {
         this.match = true;
     }
-    // console.log("letter: " + this.letter + ", match: " + this.match);
 }
