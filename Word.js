@@ -18,7 +18,7 @@ var makePhrase = function (str) {
     return obj;
 }
 
-// export the functions
+// export the Word module
 module.exports = {
     makeString: makeString,
     makePhrase: makePhrase
