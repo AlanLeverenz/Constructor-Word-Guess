@@ -1,10 +1,8 @@
-
-//require npm inquirer
+//require npm inquirer and Word functions
 var inquirer = require('inquirer');
-// include('./Word');
+var MyWord = require('./Word');
 
-// WOF PHRASES
-
+// Wheel of Fortune phrases
 wofArr = [
     'A CAT HAS NINE LIVES',
     'A BITTER PILL TO SWALLOW',
@@ -44,51 +42,6 @@ wofArr = [
     'FINISH YOUR THOUGHT'
     ];
 
-// LETTER CONSTRUCTOR ======================
-
-var Letter = function(letter) { 
-    this.letter = letter,
-    this.match = false
-}
-
-// returns either the underlying letter or an underscore
-Letter.prototype.toString = function() {
-    var placeHolder = '_';
-    if (this.match === true) {
-            // console.log(this.letter);
-            return this.letter;
-        } else if (this.match === false) {
-            // console.log(placeHolder);
-            return placeHolder;
-        } 
-}
-
-// compares input with underlying letter
-Letter.prototype.compare = function(char) {
-    if (this.letter === char.toUpperCase()) {
-        this.match = true;
-    }
-}
-
-// WORD ARRAY WITH LETTER INSTANCES =========================
-
-var makeString = function (arr) {
-    var index = Math.floor(Math.random() * 36 );
-    var str = arr[index];
-    return str;
-} 
-
-// build the word object
-var makePhrase = function (str) {
-    var obj = [];
-    for ( var i=0; i < str.length ; i++ ) {
-        var letter = new Letter(str[i]);
-        obj.push(letter);
-    }
-    return obj;
-}
-
-
 // INDEX INQUIRER ============================
 
 // initialize variables
@@ -98,8 +51,8 @@ var showArray = [];
 var count = 0;
 
 var initialize = function() {
-    wordStr = makeString(wofArr);
-    Word = makePhrase(wordStr);
+    wordStr = MyWord.makeString(wofArr);
+    Word = MyWord.makePhrase(wordStr);
     count = 0;
 }
 
@@ -243,8 +196,8 @@ var getInput = function() {
             }
         });
     }
-};
+}; // end getInput
 
-// call the input function
+// initialize and call the input function
 initialize();
 getInput();
