@@ -2,7 +2,7 @@
 A Word Guess command-line game using constructor functions.
 
 ## What node app does
-Constructor-Word-Guess is a browser-less Node.js Command Line Interface application. It utilizes the *inquirer* NPM module to prompt the player for responses. The game asks the player to enter letters, one at a time, to complete a hidden phrase. 
+Constructor-Word-Guess is a browser-less Node.js Command Line Interface application. It utilizes the *inquirer* NPM module to prompt the player for responses. The game asks the player to enter letters, one at a time, to complete a hidden phrase. The player has 15 guess attempts to win the game. A counter indicates how many guesses remain.
 
 ## Overview
 The game randomly picks from a list of 36 phrases, sourced from a list of over 6,000 Wheel of Fortune hidden phrases used on the show. The player is prompted to enter a letter. If it matches the same letter in the hidden phrase, the letter appears wherever it is positioned in the phrase. 
@@ -19,12 +19,22 @@ Follow these instructions for running the app:
 
 4. You will be prompted to enter a letter. Since there are multiple words in each phrase, a good first character to guess is the spaceband so you can see the length of each word.
 
+## Screenshots
+
+Game start: https://github.com/alanleverenz/Constructor-Word-Guess/blob/master/images/input-start.png
+
+Guessing letters: https://github.com/alanleverenz/Constructor-Word-Guess/blob/master/images/letter-guess.png
+
+Choosing to guess the letter or phrase: https://github.com/alanleverenz/Constructor-Word-Guess/blob/master/images/letter-or-phrase-guess.png
+
+Guessing the phrase: https://github.com/alanleverenz/Constructor-Word-Guess/blob/master/images/phrase-guess.png
+
 ## Technical aspects
 
 In addition to the NPM Inquirer package files, there are three JavaScript files that node needs to run the application. They are:
-* letter.js
-* Word.js
-* Index.js
+* __Letter.js__. Holds the *Letter* constructor which is exported to Word.js. 
+* __Word.js__. Requires ./Letter.js. Uses the letter constructor in its *makePhrase* function, which is exported to index.js, along with the *makeString* function.
+* __index.js__. Requires ./Word.js. 
 
 ### Letter.js
 This file has the constructor that holds a letter, a match property, and two functions for comparing the letter with user input and for displaying the phrase to the user. It displays hidden characters as they are guessed. Unmatched characters appear as an underscore. 

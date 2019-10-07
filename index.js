@@ -49,6 +49,7 @@ var wordStr = '';
 var Word = [];
 var showArray = [];
 var count = 0;
+var guesses = 15;
 
 var initialize = function() {
     wordStr = MyWord.makeString(wofArr);
@@ -95,6 +96,7 @@ var guessPhrase = function() {
         // check if the phrase was matched
         if (answers.phrase.toUpperCase() === wordStr) { 
             console.log("YOU GOT IT!");
+            console.log(wordStr);
         } else {
             console.log("NICE TRY, BUT THAT'S NOT IT.");
         }
@@ -131,6 +133,7 @@ var guessLetter = function() {
             var check = checkMatches();
             if (check == true) { 
                 console.log("YOU GOT IT!");
+                console.log(wordStr);
                 // ask to play another
                 playAnother();
             } else {
@@ -141,7 +144,8 @@ var guessLetter = function() {
 
 // prompt : getInput
 var getInput = function() {
-
+    guesses = 15 - count;
+    console.log('You have ' + guesses + ' guesses.')
     // guess letters for up to 11 rounds
     if (count < 12) {
         inquirer.prompt([{

@@ -6,10 +6,8 @@ var Letter = function(letter) {
     this.toString = function() {
         var placeHolder = '_';
         if (this.match === true) {
-                // console.log(this.letter);
                 return this.letter;
             } else if (this.match === false) {
-                // console.log(placeHolder);
                 return placeHolder;
             }
     },    
@@ -23,6 +21,6 @@ var Letter = function(letter) {
 // export the Letter module
 module.exports = {
     Letter: Letter
-  };
+};
 
 // ---
