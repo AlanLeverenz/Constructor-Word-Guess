@@ -3,7 +3,8 @@ var MyLetter = require("./Letter.js");
 
 // build the phrase string
 var makeString = function (arr) {
-    var index = Math.floor(Math.random() * MyLetter.Letter.length );
+    console.log('length = ' + arr.length);
+    var index = Math.floor(Math.random() * arr.length );
     var str = arr[index];
     return str;
 } 
