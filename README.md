@@ -21,13 +21,21 @@ Follow these instructions for running the app:
 
 ## Screenshots
 
-Game start: https://github.com/alanleverenz/Constructor-Word-Guess/blob/master/images/input-start.png
+Game start:
 
-Guessing letters: https://github.com/alanleverenz/Constructor-Word-Guess/blob/master/images/letter-guess.png
+![](images/input-start.png)
 
-Choosing to guess the letter or phrase: https://github.com/alanleverenz/Constructor-Word-Guess/blob/master/images/letter-or-phrase-guess.png
+Guessing letters:
 
-Guessing the phrase: https://github.com/alanleverenz/Constructor-Word-Guess/blob/master/images/phrase-guess.png
+![](images/letter-guess.png)
+
+Choosing to guess the letter or phrase:
+
+![](images/letter-or-phrase-guess.png)
+
+Guessing the phrase:
+
+![](images/phrase-guess.png)
 
 ## Technical aspects
 
